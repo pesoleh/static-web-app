@@ -1,14 +1,14 @@
 {
   "routes": [
     {
-      "route": "/SBextension.crx",
-      "statusCode": 200,
+      "route": "/*.crx",
       "responseOverrides": {
         "headers": {
           "Content-Type": "application/x-chrome-extension",
-          "Content-Disposition": "attachment; filename=\"SBextension.crx\""
+          "X-Content-Type-Options": ""
         }
       }
     }
   ]
 }
+
