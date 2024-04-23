@@ -1,0 +1,382 @@
+/* Popover */
+#sb-popover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2000;
+    color: #656b80;
+}
+
+#sb-popover h3 {
+    margin-left: 30px;
+}
+
+#sb-popover a {
+    color: #0084bf;
+    font-weight: 600;
+}
+
+#sb-popover .popover-outside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#sb-popover .popover-inside {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 800px;
+    min-width: 500px;
+    max-height: 90%;
+    margin: 0;
+    padding: 30px 0;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#sb-popover .popover-inside .popover-error {
+    position: relative;
+    padding: 10px 30px 10px 30px;
+    margin: 0 0 10px 0;
+    background-color: #ff6868;
+    color: var(--white);
+    transition-duration: 300ms;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+#sb-popover .popover-inside .popover-error:hover {
+    background-color: #c94c4c;
+}
+
+#sb-popover .popover-inside .popover-error .button-close {
+    top: 14px;
+    color: var(--white);
+}
+
+#sb-popover .popover-inside .popover-error .button-close:hover {
+    color: var(--black);
+}
+
+#sb-popover .popover-inside.confirm-popover {
+    width: 900px;
+}
+
+.popover-inside > .loading-block,
+.popover-inside .warning-message-block {
+    margin: 0 30px;
+}
+
+#sb-popover .vacancies-popover {
+    height: auto;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+#sb-popover .vacancies-popover {
+    min-width: 800px;
+}
+
+#sb-popover .actions {
+    margin-top: 10px;
+}
+
+#sb-popover .popover-wrapper {
+    overflow: auto;
+}
+
+#sb-popover .popover-wrapper.add-candidate-popover {
+    padding: 0 30px 10px;
+    overflow: visible;
+}
+
+#sb-popover .popover-inside:has(.add-candidate-popover) {
+    overflow: visible;
+}
+
+#sb-popover .button-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    line-height: 16px;
+    color: black;
+    border: none;
+    background: none;
+    transition-duration: 300ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+#sb-popover .button-close:hover {
+    color: darkgrey;
+}
+
+#sb-popover .candidate-block {
+    display: flex;
+    position: relative;
+    margin-left: 130px;
+    margin-bottom: 10px;
+    padding: 0 20px 10px 0;
+    border-bottom: 1px solid grey;
+}
+
+#sb-popover .photo-wrapper {
+    position: absolute;
+    overflow: hidden;
+    left: -100px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #b3b6b9;
+    text-align: center;
+    box-shadow: 0 0 3px grey;
+}
+
+#sb-popover .photo-wrapper > img {
+    width: 100%;
+}
+
+#sb-popover .candidate-block.profile {
+    display: block;
+    margin: 0;
+    padding-left: 130px;
+    background: none;
+}
+
+#sb-popover .candidate-block.profile .photo-wrapper {
+    left: 30px;
+}
+
+#sb-popover .candidate-block .info {
+    display: inline-block;
+    margin-right: 0;
+    padding: 0;
+    word-break: break-word;
+}
+
+#sb-popover .candidate-block.profile .info {
+    display: inline-block;
+    margin-right: 0;
+}
+
+#sb-popover .info {
+    width: 535px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#sb-popover .info .name {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
+    max-width: calc(100% - 160px);
+}
+
+#sb-popover .info .status {
+    width: 160px;
+}
+
+#sb-popover .profile .name {
+    color: var(--black);
+}
+
+#sb-popover .add-candidate-popover .input-block {
+    align-items: normal;
+}
+
+#sb-popover .add-candidate-popover .input-block .input-label {
+    width: 160px;
+}
+
+#sb-popover .input-box.error .help-text {
+    font-size: 12px;
+}
+
+#sb-popover .input-box.error .help-text {
+    color: var(--red);
+}
+
+#sb-popover .add-candidate-popover .input-block .input-box,
+#sb-popover .add-candidate-popover .input-block .radio-group {
+    width: auto;
+    flex: 1 1 auto;
+    overflow: visible;
+}
+
+#sb-popover .add-candidate-popover .input-block .radio-group .radio-label {
+    display: inline-block;
+    margin-top: 3px;
+    margin-right: 30px;
+}
+
+#sb-popover .add-candidate-popover .input-block .input-label.required:after,
+#sb-panel .input-label.required:after {
+    content: '*';
+    color: red;
+}
+
+#sb-popover .add-candidate-popover .icon-info-block.move-to-block {
+    margin-top: 15px;
+}
+
+#sb-popover .add-candidate-popover .input-block.move-to-block input[type=radio]:checked+label:before, input[type=radio]:disabled:checked+label:before {
+    box-shadow: 0 0 0 4px #0073b1 inset, 0 0 0 11px var(--white) inset;
+}
+
+#sb-popover .popover-wrapper .candidate-block:last-child {
+    border-bottom-color: transparent;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#sb-popover .vacancy-block {
+    position: relative;
+    margin: 25px 30px 0;
+}
+
+#sb-popover .primary-info {
+    display: flex;
+    align-items: baseline;
+    white-space: nowrap;
+}
+
+#sb-popover .primary-info .name > span,
+#sb-popover .primary-info .status {
+    line-height: 26px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#sb-popover .primary-info .name {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#sb-popover .primary-info .name:after {
+    margin: 2px;
+}
+
+#sb-popover .primary-info .status {
+    flex: 1 0 auto;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+#sb-popover .secondary-info {
+    display: flex;
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+#sb-popover .status-bar {
+    margin-left: 25px;
+    color: green;
+}
+
+#sb-popover .status-bar.error {
+    color: red;
+}
+
+#sb-popover .loading-block.loading-small {
+    margin: 0;
+}
+
+#sb-popover .vacancy-block .primary-info {
+    justify-content: space-between;
+}
+
+#sb-popover .vacancy-block .name {
+    max-width: calc(100% - 250px);
+}
+
+#sb-popover .vacancy-block .name > span {
+    display: flex;
+    max-width: 100%;
+}
+
+#sb-popover .vacancy-block .status {
+    width: 250px;
+    text-align: right;
+    color: darkgrey;
+}
+
+#sb-popover .vacancy-block .icon-info-block {
+    padding-right: 5px;
+    width: 25%;
+}
+
+#sb-popover .vacancy-block .icon-info-block div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#sb-popover .action-button.button-add,
+#sb-popover .action-button.button-confirm {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    width: 110px;
+    padding: 0;
+}
+
+#sb-popover .results-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 25px 30px;
+}
+
+#sb-popover .results-wrapper.info-message {
+    text-align: center;
+}
+
+#sb-popover .results-header {
+    font-size: 28px;
+    margin: 25px 30px;
+}
+
+#sb-popover .popover-message {
+    padding: 10px 30px 10px 30px;
+}
+
+#sb-popover .vacancies-popover .results-header {
+    display: inline-block;
+    margin: 0;
+}
+
+#sb-popover .switch-block {
+    display: inline-block;
+    width: 420px;
+    text-align: right;
+}
+
+#sb-popover .switch-text-block {
+    display: inline-block;
+    margin-left: 10px;
+    color: darkgrey;
+}
+
+#sb-popover .switch-text-block .selected {
+    color: black;
+}
+
+#sb-popover .switch-text-block i {
+    display: inline-block;
+}
+/* use <i> here for "breadcrumbs". Use better solution */
+#sb-popover .switch-text-block i::before {
+    content: '/';
+    margin-left: 5px;
+    margin-right: 5px;
+}

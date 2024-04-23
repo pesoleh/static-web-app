@@ -1,0 +1,119 @@
+.sb-select {
+    font-size: 14px;
+    cursor: pointer;
+    height: 32px;
+    position: relative;
+}
+
+.sb-select.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: default;
+    position: relative;
+}
+
+.sb-select .select-icon {
+    display: inline-flex;
+}
+
+.sb-select .select-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 230px;
+    overflow: auto;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0 2px var(--black60);
+    padding-bottom: 2px;
+}
+
+.sb-select .options-content {
+    max-height: 200px;
+    overflow: auto;
+    margin-right: 2px;
+    padding-top: 4px;
+}
+
+.sb-select .select-content .option {
+    padding: 1px 10px;
+    margin-left: 2px;
+    font-weight: normal;
+}
+
+.sb-select .group-label {
+    padding: 1px 10px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.sb-select .empty-text {
+    display: none;
+    padding-left: 10px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+.sb-select .empty-text.show {
+    display: block;
+}
+
+.sb-select .group .option {
+    padding-left: 20px;
+}
+
+.sb-select .select-content .option:hover,
+.sb-select .select-content .option.selected {
+    background-color: var(--blue60);
+    color: white;
+}
+
+.sb-select .drop-button {
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px var(--black60);
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    background: none;
+}
+
+.sb-select .drop-button:hover {
+    box-shadow: inset 0 0 0 2px var(--black60);
+}
+
+.sb-select .placeholder-text {
+    opacity: 0.6;
+}
+
+.sb-select .drop-button:focus {
+    box-shadow: inset 0 0 0 2px var(--black60);
+    outline: auto -webkit-focus-ring-color;
+}
+
+.sb-select .select-content.show {
+    display: block;
+}
+
+.sb-select .search-input {
+    outline: none;
+    box-sizing: border-box;
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 14px;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    box-shadow: inset 0 0 0 1px var(--black60);
+}
+
+.sb-select.loading .drop-button {
+    opacity: 0.7;
+}

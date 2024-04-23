@@ -1,0 +1,5 @@
+{
+  "mimeTypes": {
+    ".crx": "application/x-chrome-extension"
+  }
+}

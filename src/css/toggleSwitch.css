@@ -1,0 +1,63 @@
+/* This toggle switch button is copied from
+ * https://www.w3schools.com/howto/howto_css_switch.asp
+ */
+/* The switch - the box around the slider */
+#sb-popover .switch {
+    position: relative;
+    display: inline-block;
+    width: 46px;
+    height: 18px;
+    margin: 0;
+    top: 3px;
+}
+
+/* Hide default HTML checkbox */
+#sb-popover .switch input {display:none;}
+
+/* The slider */
+#sb-popover .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+#sb-popover .slider:before {
+    position: absolute;
+    content: '';
+    height: 16px;
+    width: 16px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+/* !important is user in order to overwrite linkedin styles */
+input:checked + .slider {
+    background-color: #6f20a6 !important;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px blue !important;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(28px) !important;
+    -ms-transform: translateX(28px) !important;
+    transform: translateX(28px) !important;
+}
+
+/* Rounded sliders */
+#sb-popover .slider.round {
+    border-radius: 34px !important;
+}
+
+#sb-popover .slider.round:before {
+    border-radius: 50%;
+}

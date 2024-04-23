@@ -1,0 +1,369 @@
+/* Common css */
+:root {
+    --red: #f44336;
+    --white: #fff;
+    --black: #000;
+    --orange: 255, 152, 0;
+    --black30: rgba(0, 0, 0, 0.3);
+    --black60: rgba(0, 0, 0, 0.6);
+    --black75: rgba(0, 0, 0, 0.75);
+    --black90: rgba(0, 0, 0, 0.9);
+    --violet: #6863c2;
+    --blue60: #378fe9;
+}
+
+#sb-panel .sb-button,
+#sb-popover .sb-button {
+    border-radius: 2px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    transition-duration: 300ms;
+    transition-property: background-color, box-shadow, color;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+#sb-panel *,
+#sb-popover * {
+    font-family: Source Sans Pro, Helvetica, Arial, sans-serif, Hiragino Kaku Gothic Pro, Meiryo, Hiragino Sans GB W3, Noto Naskh Arabic, Droid Arabic Naskh, Geeza Pro, Simplified Arabic, Noto Sans Thai, Thonburi, Dokchampa, Droid Sans Thai, Droid Sans Fallback, -apple-system, '.SFNSDisplay-Regular', Heiti SC, Microsoft Yahei, Segoe UI !important;
+}
+
+#sb-panel .sb-button[disabled],
+#sb-panel .action.disabled,
+#sb-popover .sb-button[disabled],
+#sb-popover .action.disabled {
+    opacity: 0.4;
+    cursor:  not-allowed;
+}
+
+#sb-panel select,
+#sb-popover select {
+    background-color: transparent !important;
+}
+
+#sb-panel select[disabled],
+#sb-popover select[disabled] {
+    box-shadow: inset 0 0 0 1px var(--black60);
+}
+
+#sb-panel select.stage {
+    color: inherit;
+}
+
+#sb-popover .popover-inside .actions {
+    text-align: center;
+}
+
+#sb-panel .action-button,
+#sb-popover .action-button {
+    background-color: var(--violet);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 1.25px;
+    height: 40px;
+    line-height: 40px;
+    outline-width: 2px;
+    padding: 0 24px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    border: none;
+}
+
+#sb-panel .action-button .loader,
+#sb-popover .action-button .loader {
+    position: absolute;
+    font-size: 20px;
+    left: calc(50% - 10px);
+}
+
+#sb-panel .action-button.secondary,
+#sb-popover .action-button.secondary {
+    background-color: #d3d6df;
+    color: #656b80;
+}
+
+#sb-popover .action-button {
+    display: inline-block;
+    text-align: center;
+    margin: 0 5px;
+}
+
+#sb-panel .action-button.button-cancel,
+#sb-popover .action-button.button-cancel {
+    background-color: white;
+    border: 1px solid grey;
+    color: black;
+}
+
+#sb-panel .action-button.button-cancel:not([disabled]):hover,
+#sb-popover .action-button.button-cancel:not([disabled]):hover {
+    background-color: lightgrey;
+}
+
+#sb-panel.hide,
+#sb-popover.hide {
+    display: none !important;
+}
+
+#sb-panel .hide,
+#sb-popover .hide {
+    display: none !important;
+}
+
+#sb-panel input[type=checkbox]:not(:checked)+label:before,
+#sb-popover input[type=checkbox]:not(:checked)+label:before {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--black75) !important;
+}
+
+#sb-panel input[type=checkbox]:disabled+label:before,
+#sb-popover input[type=checkbox]:disabled+label:before {
+    background-color: var(--black30) !important;
+    box-shadow: none !important;
+}
+
+#sb-panel label,
+#sb-popover label {
+    cursor: pointer;
+    color: var(--black75) !important;
+}
+
+#sb-panel input[type=checkbox]:checked+label:before,
+#sb-popover input[type=checkbox]:checked+label:before,
+#sb-panel input[type=radio]:checked+label:before,
+#sb-popover input[type=radio]:checked+label:before {
+    background-color: var(--violet);
+}
+
+
+#sb-panel input[type=radio]+label:before,
+#sb-popover input[type=radio]+label:before {
+    box-shadow: inset 0 0 0 1px var(--black75) !important;
+}
+
+#sb-panel input[type=radio]:checked+label:after,
+#sb-popover input[type=radio]:checked+label:after {
+    background-color: var(--white) !important;
+}
+
+#sb-panel input[type=checkbox]:checked+label:after,
+#sb-popover input[type=checkbox]:checked+label:after {
+    background: var(--white);
+}
+
+#sb-panel input[type=checkbox]:disabled+label,
+#sb-popover input[type=checkbox]:disabled+label {
+    cursor: default;
+    color: var(--black30) !important;
+}
+
+#sb-panel input:hover,
+#sb-popover input:hover {
+    border: none;
+    box-shadow: inset 0 0 0 2px var(--black90) !important;
+}
+
+#sb-panel input[type=text]::placeholder,
+#sb-popover input[type=text]::placeholder {
+    color: var(--black60);
+}
+
+#sb-panel input[type=text],
+#sb-popover input[type=text] {
+    box-shadow: inset 0 0 0 1px var(--black60);
+    color: var(--black);
+}
+
+#sb-panel input[type=text]:focus,
+#sb-popover input[type=text]:focus,
+#sb-panel input[type=text]:hover,
+#sb-popover input[type=text]:hover {
+    box-shadow: inset 0 0 0 2px var(--black60);
+}
+
+#sb-panel input[type=text],
+#sb-popover input[type=text] {
+    border: none;
+    border-radius: 4px;
+}
+
+#sb-popover input[type=text].required {
+    box-shadow: 0 0 0 1px var(--red);
+    border-color: var(--red);
+}
+
+#sb-panel .loading-small .message,
+#sb-popover .loading-small .message {
+    margin-left: 30px;
+}
+
+#sb-popover .popover-inside > .loading-block,
+#sb-popover .warning-message-block,
+#sb-panel .activities-block .loading-block,
+#sb-panel .activities-block .warning-message-block {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#sb-popover .warning-message-block .icon,
+#sb-panel .warning-message-block .icon {
+    margin-right: 10px;
+}
+
+#sb-popover .warning-message-block.nowrap,
+#sb-panel .warning-message-block.nowrap {
+    white-space: nowrap;
+}
+
+#sb-panel .column,
+#sb-popover .column {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}
+
+#sb-popover .column {
+    width: 258px;
+}
+
+#sb-popover div.button-text.error,
+#sb-panel div.button-text.error {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+#sb-popover .button-text .icon,
+#sb-panel .button-text .icon {
+    margin-right: 4px;
+}
+
+#sb-popover .button-text:not(:empty),
+#sb-panel .button-text:not(:empty),
+.sb-status-info.button-text:not(:empty) {
+    padding: 0 8px;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color: var(--violet);
+    border-radius: 4px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    background-color: #efeff8;
+    line-height: 1.2;
+}
+
+.sb-status-info .loader {
+    font-size: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+.sb-status-info .text {
+    padding-right: 8px;
+}
+
+.sb-status-info.button-text {
+    position: absolute;
+    right: 16px;
+    top: 55px;
+}
+
+#sb-panel .icon-info-block,
+#sb-panel .input-block,
+#sb-popover .input-block,
+#sb-popover .icon-info-block {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+}
+
+#sb-panel .icon-info-block div,
+#sb-panel .icon-info-block a,
+#sb-popover .icon-info-block div,
+#sb-popover .icon-info-block a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+}
+
+#sb-panel .icon-info-block .icon-left,
+#sb-popover .icon-info-block .icon-left {
+    margin-right: 8px;
+    text-align: center;
+}
+
+#sb-panel .icon-info-block .icon-right,
+#sb-popover .icon-info-block .icon-right {
+    margin-left: 5px;
+    font-style: normal;
+    cursor: default;
+}
+
+#sb-panel .icon-info-block .icon-right.check,
+#sb-popover .icon-info-block .icon-right.check {
+    color: green;
+}
+
+#sb-panel .icon-info-block .icon-right.cross,
+#sb-popover .icon-info-block .icon-right.cross {
+    color: var(--red);
+}
+
+#sb-popover .last-activity {
+    margin-top: 10px;
+}
+
+#sb-panel .last-activity .subject,
+#sb-popover .last-activity .subject {
+    font-size: 14px;
+}
+
+#sb-panel .sb-alert,
+#sb-popover .sb-alert {
+    border-radius: 4px;
+    display: flex;
+    padding: 12px;
+}
+
+#sb-panel .sb-alert .alert-icon,
+#sb-popover .sb-alert .alert-icon {
+    margin-right: 8px;
+}
+
+#sb-panel .sb-alert.warning,
+#sb-popover .sb-alert.warning {
+    background-color: rgba(var(--orange), 0.1);
+    color: rgba(var(--orange));
+}
+
+#sb-toast {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 8px 16px;
+    background: var(--violet);
+    max-width: 600px;
+    width: fit-content;
+    color: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(-50%);
+    transition: opacity 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+#sb-toast.show {
+    bottom: 20px;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+}
