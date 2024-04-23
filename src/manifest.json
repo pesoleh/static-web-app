@@ -7,6 +7,7 @@
     "16": "icons/logo16.png",
     "48": "icons/logo48.png",
     "128": "icons/logo128.png" },
+  "update_url": "https://delightful-plant-070141e10.5.azurestaticapps.net/manifest.xml",
   "content_scripts": [{
     "matches": ["https://www.linkedin.com/*"],
     "js": ["js/Dom.js", "js/ProfileDataProvider.js", "js/envConfig.js", "js/config.js", "js/helpers.js", "js/common.js",
